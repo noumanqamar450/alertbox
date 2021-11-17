@@ -6,7 +6,7 @@ A simple, beautiful, responsive, easy to use, customizable text for JavaScript's
 ```
 <script src="https://cdn.jsdelivr.net/gh/simple-alertbox/alertbox@main/alertbox.min.js"></script>
 ```
-This tag is used in the inside header tag.
+This tag will be used in the footer.
 
 * For AlertBox function call
 
