@@ -35,6 +35,8 @@ This tag will be used in the footer.
   <script>question.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
   ```
   
+ # Demo
+ Alertbox Demo -> [Alertbox](https://alertbox.js.org)
  
  # Author
  Instgram. [@noumanqamar.official](https://www.instagram.com/noumanqamar.official/)
