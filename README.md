@@ -79,6 +79,45 @@ For Success
   });
   </script>
   ```
+ If you want a custom alert theme colour, then you add this code
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'question',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK',
+      themeColor: '#000000'
+  });
+  </script>
+  ```
+   If you want a custom button colour, then you add this code
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'question',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK',
+      themeColor: '#000000',
+      btnColor: '	#7CFC00'
+  });
+  </script>
+  ```
+     If you want border, then you add this code. Otherwise, the border will false
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'question',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK',
+      themeColor: '#000000',
+      btnColor: '	#7CFC00',
+      border:true
+  });
+  </script>
+  ```
  
  # Demo
  Alertbox Demo -> [Alertbox](https://alertbox.js.org)
