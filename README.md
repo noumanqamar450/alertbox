@@ -11,20 +11,71 @@ This tag will be used in the footer.
 * For AlertBox function call
 
 ```
-<script>success.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
+ <script>
+  alertbox.render({
+      alertIcon: 'success',
+      title: 'Thank You!',
+      message: 'AlertBox Popup Message',
+      btnTitle: 'Ok',
+      themeColor: 'purple',
+      btnColor: 'green',
+      border:true
+  });
+  </script>
 ```
 # Use AlertBox:
-
+For Success
   ```
   <script>
   alertbox.render({
       alertIcon: 'success',
-      title: 'Thank You!',
-      message: 'AlertBox Popup Preview',
-      btnTitle: 'Bye',
-      themeColor: 'purple',
-      btnColor: 'green',
-      border:false
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'Ok'
+  });
+  </script>
+  ```
+  For Error
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'error',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK'
+  });
+  </script>
+  ```
+  For Warning
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'warning',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK'
+  });
+  </script>
+  ```
+  For Information
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'info',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK'
+  });
+  </script>
+  ```
+  For Question
+  ```
+  <script>
+  alertbox.render({
+      alertIcon: 'question',
+      title: 'Title',
+      message: 'AlertBox Message',
+      btnTitle: 'OK'
   });
   </script>
   ```
