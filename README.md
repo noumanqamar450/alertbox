@@ -104,7 +104,7 @@ If you want a custom button colour, then you add this code
      });
   </script>
 ```
-If you want border, then you add this code. Otherwise, the border will false
+If you want border, then you add this code. Otherwise, the border will be false۔
 ```
   <script>
      alertbox.render({
