@@ -1,117 +1,172 @@
 body {
-	background: repeating-linear-gradient(
-	  45deg,
-	  #606dbc,
-	  #606dbc 10px,
-	  #465298 10px,
-	  #465298 20px
-	);
+	background: repeating-linear-gradient(45deg,
+			#606dbc,
+			#606dbc 10px,
+			#465298 10px,
+			#465298 20px);
 }
+
 .container {
-	background-color:#fff;
+	background-color: #fff;
 	border-radius: 0px 0px 20px 20px;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
 .header {
-	width:100%;
-	height:350px;
-	background: rgb(106,98,246);
-	background: linear-gradient(156deg, rgba(106,98,246,1) 0%, rgba(102,102,228,1) 44%, rgba(0,212,255,1) 100%);
+	width: 100%;
+	min-height: 250px;
+	background: rgb(106, 98, 246);
+	background: linear-gradient(156deg, rgba(106, 98, 246, 1) 0%, rgba(102, 102, 228, 1) 44%, rgba(0, 212, 255, 1) 100%);
 	border-radius: 0px 0px 20px 20px;
-	padding:20px;
-	text-align:center;
+	padding: 20px;
+	text-align: center;
 	box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
+
 .text-color {
-	color:rgb(106,98,246);
+	color: rgb(106, 98, 246);
 }
-.logo img{
-	display:flex;
-	position:absolute;
-	top:15%;
-	left:40%;
+
+.logo {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
-.logo p {
-	color:#fff;
-	margin-top:150px;
+
+.logo img {
+	max-width: 250px;
+	margin-top: 50px;
 }
+
+.header p {
+	color: #fff;
+	margin-top: 20px;
+	margin-top: 50px;
+}
+
 .space {
-	width:100%;
-	height:50px;
-	padding:10px;
+	width: 100%;
+	height: 50px;
+	padding: 10px;
 }
+.topCode .col-lg-5,
+.topCode .col-lg-2 {
+	height: 100%;
+	margin: auto auto;
+}
+
 .cards {
-	padding:20px;
+	padding: 20px;
 }
+
 .cards img {
-	width:100%;
-	border-radius:10px;
+	width: 100%;
+	border-radius: 10px;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 .vs {
 	font-family: Brush Script MT;
-	font-size:50px;
-	color:red;
-	text-align:center;
-	margin-top:40px;
+	font-size: 50px;
+	color: red;
+	text-align: center;
+	margin-top: 40px;
 }
-.code {
-	margin:10px;
-	padding:5%;
-	background-color:#F8ECEC;
-	border-radius:8px;
-	text-align:center;
-}
-.code code {
-	margin-top:12px;
-	font-size:14px;
-}
-.top-logo {
-	width:100px;
-}
-.btns {
-	text-align:center;
-}
+
+.code,
 .try {
-	margin-top:30px;
-	padding:5%;
-	background-color:#F8ECEC;
-	border-radius:8px;
-	text-align:center;
+	margin: 10px;
+	padding: 20px 20px;
+	background-color: darkslategray;
+	border-radius: 8px;
+	text-align: left;
+	color: #fff;
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	font-size: 16px;
+	position: relative;
 }
-.img-icon {
-	margin-left:20%;
+
+.code .fa-clone,
+.try .fa-clone {
+	background:gray;
+	padding:10px ;
+	position:absolute ;
+	border-radius: 5px;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	display: none;
+	animation: display 0.5s ;
+	font-size: 14px;
 }
+.code textarea,
+.try textarea {
+	border: none;
+	background: none;
+	outline: none;
+	width: 100%;
+}
+
+@keyframes display {
+	0%{
+		opacity: 0%;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+.code:hover .fa-clone,
+.try:hover .fa-clone {
+	display: block;
+}
+
+code,
+textarea {
+
+	color: bisque;
+	font-family: Consolas, "courier new";
+}
+
+
+.top-logo {
+	width: 100px;
+}
+
+.img-icon,
+.btns {
+	display: flex;
+	justify-content: center;
+align-items: center;
+height: 100%;
+}
+
 .text-top {
-	margin-top:15%;
-	margin-bottom:15%;
+	margin-top: 15%;
+	margin-bottom: 15%;
 }
-.install .textarea{
-	padding:2%;
+
+.install .textarea {
+	padding: 2%;
 }
-.install .code {
-	margin:5px;
-	padding:2%;
-	background-color:#F8ECEC;
-	border-radius:8px;
-	text-align:left;
-}
+
+
 .love-icon {
 	background-image: url(../images/heart-icon.svg);
-    width: 22px;
-    height: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 5px;
-    position: relative;
-    top: -2px;
+	width: 22px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 5px;
+	position: relative;
+	top: -2px;
 }
-@media screen and (max-width: 768px){
-	.logo img{
-		left:32%;
-	}
+
+@media screen and (max-width: 768px) {
+
 	.img-icon {
-		margin-top:25px;
-		margin-left:35%;
+		padding: 25px;
 	}
 }
