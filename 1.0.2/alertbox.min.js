@@ -1,0 +1,681 @@
+const style = document.createElement('style');
+style.innerHTML = `
+body{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+}
+.alertoverlay{
+  display: none;
+  opacity: .4;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  width: 100%;
+  height:100%;
+  z-index: 10;
+}
+.bounce-in {
+  animation: bounce-in 0.6s ease;
+}
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.alertbox{
+  font-family: Trebuchet MS;
+  display: none;
+  position:fixed;
+  justify-content:center;
+  align-items:center;
+  border-radius:7px; 
+  width:100%;
+  height:100vh;
+  z-index: 10;
+  border-radius:50px;
+  box-sizing:border-box;
+}
+.alert-btn{
+  cursor:pointer;
+  padding:10px 20px;
+  font-size:18px;
+  font-weight:500;
+  color: #fff;
+  margin:10px;
+  background:#6495ED;
+  border-radius:5px;
+  border:none;
+  transition:1s;
+}
+.alert-btn:hover{
+  opacity:0.8;
+}
+.alertbox > div { 
+  background:#FFF;
+  width:400px;
+  margin:20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+  border-radius:10px;
+  padding:20px 50px;
+  border-top:5px solid #6495ED;
+  border-bottom:5px solid #6495ED;
+}
+.alertbox > div > .alertboxhead{text-align:center; font-size:19px; padding-top: 20px; color:#000; }
+.alertbox > div > .alertboxbody{
+  color:#000; 
+  justify-content:center;
+}
+.alertbox > div > .alertboxfoot{ text-align:right;}
+@media screen and (max-width:550px){
+  .alertbox > div > .alertboxfoot{ text-align:center;}
+}
+.sa {
+  display:inline;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+}
+.sa-question {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  width: 80px;
+  animation: scaleQuestion 0.75s infinite alternate;
+    margin:0 auto;
+}
+.sa-question-content {
+	text-align:center;
+	margin-top:0;
+	font-size: 3.75em;
+	color:#6495ED;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height: 95%;
+}
+.sa-question:after, .sa-question:before {
+  background: #fff;
+  content: "";
+  border-radius: 50%;
+  height: 100%;
+  top:0;
+  position: absolute;
+  width: 100%;
+	z-index:-2;
+}
+.sa-question:before {
+  display: inline-block;
+  opacity: 0;
+  animation: pulseQuestion 2s linear infinite;
+}
+@keyframes scaleQuestion {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseQuestion {
+  0% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  30% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: gray;
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.sa-warning {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  width: 80px;
+  animation: scaleWarning 0.75s infinite alternate;
+    margin:0 auto;
+}
+.sa-warning:after, .sa-warning:before {
+  background: #fff;
+  content: "";
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.sa-warning:before {
+  display: inline-block;
+  opacity: 0;
+  animation: pulseWarning 2s linear infinite;
+}
+.sa-warning:after {
+  display: block;
+  z-index: 1;
+}
+.sa-warning-body {
+  background-color: #6495ED;
+  border-radius: 2px;
+  height: 47px;
+  left: 50%;
+  margin-left: -2px;
+  position: absolute;
+  top: 10px;
+  width: 5px;
+  z-index: 2;
+  animation: pulseWarningIns 0.75s infinite alternate;
+}
+.sa-warning-dot {
+  background-color: #6495ED;
+  border-radius: 50%;
+  bottom: 10px;
+  height: 7px;
+  left: 50%;
+  margin-left: -3px;
+  position: absolute;
+  width: 7px;
+  z-index: 2;
+  animation: pulseWarningIns 0.75s infinite alternate;
+}
+@keyframes scaleWarning {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseWarning {
+  0% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  30% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: gray;
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.sa-info {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  width: 80px;
+  transform: rotate(45deg);
+  animation: scaleinfo 0.75s infinite alternate;
+    margin:0 auto;
+}
+.sa-info:after, .sa-info:before {
+  background: #fff;
+  content: "";
+  border-radius: 50%;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.sa-info:before {
+  display: inline-block;
+  opacity: 0;
+  animation: pulseinfo 2s linear infinite;
+}
+.sa-info:after {
+  display: block;
+  z-index: 1;
+}
+.sa-info-body {
+  background-color: #6495ED;
+  border-radius: 2px;
+  height: 40px;
+  left: 50%;
+  margin-left: -2px;
+  position: absolute;
+  top: 30px;
+  width: 5px;
+  z-index: 2;
+  animation: pulseinfoIns 0.75s infinite alternate;
+}
+.sa-info-dot {
+  background-color: #6495ED;
+  border-radius: 50%;
+  top: 15px;
+  height: 7px;
+  left: 50%;
+  margin-left: -3px;
+  position: absolute;
+  width: 7px;
+  z-index: 2;
+  animation: pulseinfoIns 0.75s infinite alternate;
+}
+@keyframes scaleinfo {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes pulseinfo {
+  0% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  30% {
+    background-color: #fff;
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: gray;
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.sa-success {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  width: 80px;
+  margin:0 auto;
+}
+.sa-success:after, .sa-success:before {
+  background: #fff;
+  content: "";
+  height: 120px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 60px;
+}
+.sa-success:before {
+  border-radius: 40px 0 0 40px;
+  width: 26px;
+  height: 80px;
+  top: -17px;
+  left: 5px;
+  transform-origin: 60px 60px;
+  transform: rotate(-45deg);
+}
+.sa-success:after {
+  border-radius: 0 120px 120px 0;
+  left: 30px;
+  top: -11px;
+  transform-origin: 0 60px;
+  transform: rotate(-45deg);
+  animation: rotatePlaceholder 4.25s ease-in;
+}
+.sa-success-placeholder {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 80px;
+  z-index: 2;
+}
+.sa-success-fix {
+  background-color: #fff;
+  height: 90px;
+  left: 28px;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 5px;
+  z-index: 1;
+}
+.sa-success-tip, .sa-success-long {
+  background-color: #6495ED;
+  border-radius: 2px;
+  height: 5px;
+  position: absolute;
+  z-index: 2;
+}
+.sa-success-tip {
+  left: 14px;
+  top: 46px;
+  transform: rotate(45deg);
+  width: 25px;
+  animation: animateSuccessTip 0.75s;
+}
+.sa-success-long {
+  right: 8px;
+  top: 38px;
+  transform: rotate(-45deg);
+  width: 47px;
+  animation: animateSuccessLong 0.75s;
+}
+@keyframes animateSuccessTip {
+  0%, 54% {
+    width: 0;
+    left: 1px;
+    top: 19px;
+  }
+  70% {
+    width: 50px;
+    left: -8px;
+    top: 37px;
+  }
+  84% {
+    width: 17px;
+    left: 21px;
+    top: 48px;
+  }
+  100% {
+    width: 25px;
+    left: 14px;
+    top: 45px;
+  }
+}
+@keyframes animateSuccessLong {
+  0%, 65% {
+    width: 0;
+    right: 46px;
+    top: 54px;
+  }
+  84% {
+    width: 55px;
+    right: 0;
+    top: 35px;
+  }
+  100% {
+    width: 47px;
+    right: 8px;
+    top: 38px;
+  }
+}
+@keyframes rotatePlaceholder {
+  0%, 5% {
+    transform: rotate(-45deg);
+  }
+  100%, 12% {
+    transform: rotate(-405deg);
+  }
+}
+.sa-error {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+  width: 80px;
+  animation: animateErrorIcon 0.5s;
+    margin:0 auto;
+}
+.sa-error:after, .sa-error:before {
+  background: #fff;
+  content: "";
+  height: 120px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 60px;
+}
+.sa-error:before {
+  border-radius: 40px 0 0 40px;
+  width: 26px;
+  height: 80px;
+  top: -17px;
+  left: 5px;
+  transform-origin: 60px 60px;
+  transform: rotate(-45deg);
+}
+.sa-error:after {
+  border-radius: 0 120px 120px 0;
+  left: 30px;
+  top: -11px;
+  transform-origin: 0 60px;
+  transform: rotate(-45deg);
+  animation: rotatePlaceholder 4.25s ease-in;
+}
+.sa-error-x {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.sa-error-placeholder {
+  border-radius: 50%;
+  border: 4px solid #6495ED;
+  box-sizing: content-box;
+  height: 80px;
+  left: -4px;
+  position: absolute;
+  top: -4px;
+  width: 80px;
+  z-index: 2;
+}
+.sa-error-fix {
+  background-color: #fff;
+  height: 90px;
+  left: 28px;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 5px;
+  z-index: 1;
+}
+.sa-error-left, .sa-error-right {
+  border-radius: 2px;
+  display: block;
+  height: 5px;
+  position: absolute;
+  z-index: 2;
+  background-color: #6495ED;
+  top: 37px;
+  width: 47px;
+}
+.sa-error-left {
+  left: 17px;
+  transform: rotate(45deg);
+  animation: animateXLeft 0.75s;
+}
+.sa-error-right {
+  right: 16px;
+  transform: rotate(-45deg);
+  animation: animateXRight 0.75s;
+}
+@keyframes rotatePlaceholder {
+  0%, 5% {
+    transform: rotate(-45deg);
+  }
+  100%, 12% {
+    transform: rotate(-405deg);
+  }
+}
+@keyframes animateErrorIcon {
+  0% {
+    transform: rotateX(100deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes animateXLeft {
+  0%, 65% {
+    left: 82px;
+    top: 95px;
+    width: 0;
+  }
+  84% {
+    left: 14px;
+    top: 33px;
+    width: 47px;
+  }
+  100% {
+    left: 17px;
+    top: 37px;
+    width: 47px;
+  }
+}
+@keyframes animateXRight {
+  0%, 65% {
+    right: 82px;
+    top: 95px;
+    width: 0;
+  }
+  84% {
+    right: 14px;
+    top: 33px;
+    width: 47px;
+  }
+  100% {
+    right: 16px;
+    top: 37px;
+    width: 47px;
+  }
+}
+@media screen and (max-width: 480px){
+			.sa {
+			   left:34%;
+			}
+		}
+    .alertbox-title{
+      font-weight:700;
+      font-size:24px;
+      margin:0;
+      margin-bottom:30px;
+    }
+    .alertbox-message{
+      text-align:center;
+      font-size:18px;
+    }
+    `;
+document.head.appendChild(style);
+function create(htmlStr) {
+  var frag = document.createDocumentFragment(),
+    temp = document.createElement('div');
+  temp.innerHTML = htmlStr;
+  while (temp.firstChild) {
+    frag.appendChild(temp.firstChild);
+  }
+  return frag;
+}
+var fragment = create('<div id="alertoverlay" class="alertoverlay"></div><div class="alertbox bounce-in" id="alertbox"><div id="alertboxmain"><div class="alertboxhead" id="alertboxheader"></div><div class="alertboxbody" id="alertboxbody"></div><div class="alertboxfoot" id="alertboxfooter"></div></div></div>');
+document.body.insertBefore(fragment, document.body.childNodes[0]);
+function alertBox() {
+  this.render = function (data) {
+    var winH = window.innerHeight;
+    var alertoverlay = document.getElementById('alertoverlay');
+    var alertbox = document.getElementById('alertbox');
+    alertoverlay.style.display = "block";
+    alertoverlay.style.height = winH + "px";
+    alertbox.style.display = "flex";
+    if (!data.title){
+      document.getElementById('alertboxheader').innerHTML = '<h3></h3>';
+    } else {
+      document.getElementById('alertboxheader').innerHTML = '<h3 class="alertbox-title">' + data.title + '</h3>';
+    }
+    if (data.alertIcon === 'success'){
+      document.getElementById('alertboxbody').innerHTML = '<div class="sa"><div class="sa-success"><div class="sa-success-tip"></div><div class="sa-success-long"></div><div class="sa-success-placeholder"></div><div class="sa-success-fix"></div></div></div><br/>';
+      if (data.themeColor) {
+        document.getElementsByClassName('sa-success')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-success-placeholder')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-success-tip')[0].style.backgroundColor = data.themeColor;
+        document.getElementsByClassName('sa-success-long')[0].style.backgroundColor = data.themeColor;
+      }
+    } else if (data.alertIcon === 'error') {
+      document.getElementById('alertboxbody').innerHTML = '<div class="sa"><div class="sa-error"><div class="sa-error-x"><div class="sa-error-left"></div><div class="sa-error-right"></div></div><div class="sa-error-placeholder"></div><div class="sa-error-fix"></div></div></div><br/>';
+      if (data.themeColor) {
+        document.getElementsByClassName('sa-error')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-error-placeholder')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-error-left')[0].style.backgroundColor = data.themeColor;
+        document.getElementsByClassName('sa-error-right')[0].style.backgroundColor = data.themeColor;
+      }
+    } else if (data.alertIcon === 'warning') {
+      document.getElementById('alertboxbody').innerHTML = '<div class="sa"><div class="sa-warning"><div class="sa-warning-body"></div><div class="sa-warning-dot"></div></div></div><br/>';
+      if (data.themeColor) {
+        document.getElementsByClassName('sa-warning')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-warning-body')[0].style.backgroundColor = data.themeColor;
+        document.getElementsByClassName('sa-warning-dot')[0].style.backgroundColor = data.themeColor;
+      }
+    } else if (data.alertIcon === 'info') {
+      document.getElementById('alertboxbody').innerHTML = '<div class="sa"><div class="sa-info"><div class="sa-info-body"></div><div class="sa-info-dot"></div></div></div><br/>';
+      if (data.themeColor) {
+        document.getElementsByClassName('sa-info')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-info-body')[0].style.backgroundColor = data.themeColor;
+        document.getElementsByClassName('sa-info-dot')[0].style.backgroundColor = data.themeColor;
+      }
+    } else if (data.alertIcon === 'question'){
+      document.getElementById('alertboxbody').innerHTML = '<div class="sa"><div class="sa-question"><div class="sa-question-content">?</div></div></div><br/>';
+      if (data.themeColor) {
+        document.getElementsByClassName('sa-question')[0].style.borderColor = data.themeColor;
+        document.getElementsByClassName('sa-question-content')[0].style.color = data.themeColor;
+      }
+    } 
+    if (!data.message){
+      document.getElementById('alertboxbody').innerHTML += '<p></p>';
+    } else {
+      document.getElementById('alertboxbody').innerHTML += '<p class="alertbox-message">' + data.message + '</p>';
+    }
+    document.getElementById('alertboxfooter').innerHTML = '<button class="alert-btn" id="alertBoxBtn" onclick="alertbox.btn()">' + data.btnTitle + '</button>';
+    if (data.themeColor) {
+      document.getElementById('alertBoxBtn').style.backgroundColor = data.themeColor;
+      document.getElementById('alertboxmain').style.borderColor = data.themeColor;
+    }
+    if (data.btnColor) {
+      document.getElementById('alertBoxBtn').style.backgroundColor = data.btnColor;
+    }
+    if (data.border === false) {
+      document.getElementById('alertboxmain').style.border = 'none';
+    }
+  }
+  this.btn = function () {
+    document.getElementById('alertbox').style.display = "none";
+    document.getElementById('alertoverlay').style.display = "none";
+  }
+}
+
+var alertbox = new alertBox();
+
