@@ -4,7 +4,7 @@ A simple, beautiful, responsive, easy to use, customizable text for JavaScript's
 * How to install
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/simple-alertbox/alertbox@main/alertbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.1/alertbox.min.js"></script>
 ```
 This tag will be used in the footer.
 
@@ -14,27 +14,21 @@ This tag will be used in the footer.
 <script>success.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
 ```
 # Use AlertBox:
-  For Success: 
+
   ```
-  <script>success.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
+  <script>
+  alertbox.render({
+      alertIcon: 'success',
+      title: 'Thank You!',
+      message: 'AlertBox Popup Preview',
+      btnTitle: 'Bye',
+      themeColor: 'purple',
+      btnColor: 'green',
+      border:false
+  });
+  </script>
   ```
-  For Error:
-  ```
-  <script>error.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
-  ```
-  For Warning:
-  ```
-  <script>warning.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
-  ```
-  For Info:
-  ```
-  <script>info.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
-  ```
-  For Question:
-  ```
-  <script>question.render("AlertBox Title","AlertBox Dialog","Button Text")</script>
-  ```
-  
+ 
  # Demo
  Alertbox Demo -> [Alertbox](https://alertbox.js.org)
  
