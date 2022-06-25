@@ -4,7 +4,7 @@ A simple, beautiful, responsive, easy to use, customizable text for JavaScript's
 * How to install
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.1/alertbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.2/alertbox.min.js"></script>
 ```
 This tag will be used in the footer.
 
