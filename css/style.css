@@ -170,3 +170,132 @@ height: 100%;
 		padding: 25px;
 	}
 }
+
+code.prettyprint {
+	display: block;
+	background-color: none
+}
+
+code .nocode {
+	background-color: none;
+	color: #000
+}
+
+code .str {
+	color: #ffa0a0
+}
+
+/* string  - pink */
+code .kwd {
+	color: #f0e68c;
+	font-weight: bold
+}
+
+code .com {
+	color: #87ceeb
+}
+
+/* comment - skyblue */
+code .typ {
+	color: #98fb98
+}
+
+/* type    - lightgreen */
+code .lit {
+	color: #cd5c5c
+}
+
+/* literal - darkred */
+code .pun {
+	color: #fff
+}
+
+/* punctuation */
+code .pln {
+	color: #fff
+}
+
+/* plaintext */
+code .tag {
+	color: #f0e68c;
+	font-weight: bold
+}
+
+/* html/xml tag    - lightyellow */
+code .atn {
+	color: #bdb76b;
+	font-weight: bold
+}
+
+/* attribute name  - khaki */
+code .atv {
+	color: #ffa0a0
+}
+
+/* attribute value - pink */
+code .dec {
+	color: #98fb98
+}
+
+/* decimal-lightgreen */
+
+
+@media print {
+	code.prettyprint {
+		background-color: none
+	}
+
+	code .str,
+	code .str {
+		color: #060
+	}
+
+	code .kwd,
+	code .kwd {
+		color: #006;
+		font-weight: bold
+	}
+
+	code .com,
+	code .com {
+		color: #600;
+		font-style: italic
+	}
+
+	code .typ,
+	code .typ {
+		color: #404;
+		font-weight: bold
+	}
+
+	code .lit,
+	code .lit {
+		color: #044
+	}
+
+	code .pun,
+	code .pun {
+		color: #440
+	}
+
+	code .pln,
+	code .pln {
+		color: #000
+	}
+
+	code .tag,
+	code .tag {
+		color: #006;
+		font-weight: bold
+	}
+
+	code .atn,
+	code .atn {
+		color: #404
+	}
+
+	code .atv,
+	code .atv {
+		color: #060
+	}
+}
