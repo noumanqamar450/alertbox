@@ -11,112 +11,94 @@ This tag will be used in the footer.
 * For AlertBox function call
 
 ```
- <script>
-    alertbox.render({
-        alertIcon: 'success',
-        title: 'Thank You!',
-        message: 'AlertBox Popup Message',
-        btnTitle: 'Ok',
-        themeColor: 'purple',
-        btnColor: 'green',
-        border:true
-    });
- </script>
+  alertbox.render({
+      alertIcon: 'success',
+      title: 'Thank You!',
+      message: 'AlertBox Popup Message',
+      btnTitle: 'Ok',
+      themeColor: 'purple',
+      btnColor: 'green',
+      border:true
+  });
 ```
 # Use AlertBox:
 For Success
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'success',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'Ok'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'success',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'Ok'
+  });
 ```
 For Error
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'error',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'error',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK'
+  });
 ```
 For Warning
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'warning',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'warning',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK'
+  });
 ```
 For Information
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'info',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'info',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK'
+  });
 ```
 For Question
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'question',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'question',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK'
+  });
 ```
 If you want a custom alert theme colour, then you add this code
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'success',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK',
-        themeColor: '#000000'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'success',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK',
+     themeColor: '#000000'
+  });
 ```
 If you want a custom button colour, then you add this code
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'success',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK',
-        themeColor: '#000000',
-        btnColor: '#7CFC00'
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'success',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK',
+     themeColor: '#000000',
+     btnColor: '#7CFC00'
+  });
 ```
 If you want border, then you add this code. Otherwise, the border will be false۔
 ```
-  <script>
-     alertbox.render({
-        alertIcon: 'success',
-        title: 'Title',
-        message: 'AlertBox Message',
-        btnTitle: 'OK',
-        themeColor: '#000000',
-        btnColor: '#7CFC00',
-        border:true
-     });
-  </script>
+  alertbox.render({
+     alertIcon: 'success',
+     title: 'Title',
+     message: 'AlertBox Message',
+     btnTitle: 'OK',
+     themeColor: '#000000',
+     btnColor: '#7CFC00',
+     border:true
+  });
 ```
  
  # Demo
