@@ -308,3 +308,49 @@ code .dec {
 		color: #060
 	}
 }
+.alertMsg,
+.alertErrorMsg {
+	padding: 20px 30px;
+	background: #fff;
+	max-width: 200px;
+	font-size: 16px;
+	font-weight: 600;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 1;
+	border-radius: 8px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	animation: displayMsg 3s;
+	opacity: 0;
+	overflow: hidden;
+	display: none;
+}
+
+@keyframes displayMsg {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	10% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+	90% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+}
+
+.alertMsg p,
+.alertErrorMsg p {
+	padding: 0;
+	margin: 0;
+}
