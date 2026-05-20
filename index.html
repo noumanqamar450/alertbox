@@ -1,419 +1,880 @@
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="msapplication-tap-highlight" content="no" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="AlertBox - A simple, beautiful, responsive, easy to use, customizable text for JavaScript's Alert Box.">
-	<meta name="author" content="Nouman Qamar">
-	<title>AlertBox - A simple, beautiful, responsive, easy to use, customizable text for JavaScript's Alert Box.
-	</title>
-	<link rel="icon" type="image/png" href="images/icon.png">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet"
-		href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGV646HMZ8"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AlertBox — Beautiful, customizable JavaScript alert dialogs. Drop-in replacement for window.alert()."
+    />
+    <meta name="author" content="Nouman Qamar" />
+    <title>AlertBox — Beautiful JS Alerts</title>
 
-		gtag('config', 'G-BGV646HMZ8');
-	</script>
-</head>
+	<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
 
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="header">
-					<div class="logo">
-						<img src="images/white.png">
-					</div>
-					<p>A simple, beautiful, responsive, easy to use, customizable text for JavaScript’s Alert Box.</p>
-				</div>
-			</div>
-		</div>
-		<div class="space"></div>
-		<div class="row topCode">
-			<div class="col-lg-12">
-				<h4 class="text-center text-color">AlertBox makes popup messages easy and pretty.</h4>
-			</div>
-			<div class="space"></div>
-			<div class="col-lg-5 text-center">
-				<p>NORMAL ALERT</p>
-				<div class="code">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(0)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">alert('Hello World!');</code>
-				</div>
-				<button class="btn btn-primary text-center" onclick='alert("Hello World!")'>Preview</button>
-			</div>
-			<div class="col-lg-2">
-				<div class="vs"> Vs</div>
-			</div>
-			<div class="col-lg-5 text-center">
-				<img class="top-logo" src="images/black.png">
-				<div class="code">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(1)" aria-hidden="true"></i>
-						<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'success',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;themeColor: '#000000',<br />
-						&nbsp;&nbsp;btnColor: '#7CFC00',<br />
-						&nbsp;&nbsp;btnColor: true<br />
-						});
-						</code>
-				</div>
-				<button class="btn btn-primary text-center" onclick="alertbox.render({
-					alertIcon: 'success',
-					title: 'Thank You!',
-					message: 'AlertBox Popup Message',
-					btnTitle: 'Ok',
-					themeColor: 'purple',
-					btnColor: 'green',
-					border:true
-				})">Preview</button>
-			</div>
-		</div>
-		<div class="space"></div>
-		<div class="col-lg-12">
-			<h4 class="text-center text-color">Demo</h4>
-		</div>
-		<div class="owl-carousel">
-			<div class="cards">
-				<img src="images/01.png">
-			</div>
-			<div class="cards">
-				<img src="images/02.png">
-			</div>
-			<div class="cards">
-				<img src="images/03.png">
-			</div>
-			<div class="cards">
-				<img src="images/04.png">
-			</div>
-			<div class="cards">
-				<img src="images/05.png">
-			</div>
-		</div>
-		<div class="space"></div>
-		<div class="col-lg-12">
-			<h4 class="text-center text-color">Use Icons</h4>
-		</div>
-		<div class="row border">
-			<div class="col-md-4">
-				<div class="btns">
-					<button class="btn btn-primary text-center text-top" onclick="alertbox.render({
-					alertIcon: 'success',
-					title: 'Thank You!',
-					message: 'AlertBox Popup Message',
-					btnTitle: 'Ok',
-					border:true
-				})">Preview</button>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="try">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(2)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'success',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;border:true<br />
-						});
-					</code>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="img-icon">
-					<img src="images/s_01.png">
-				</div>
-			</div>
-		</div>
-		<div class="row border">
-			<div class="col-md-4">
-				<div class="btns">
-					<button class="btn btn-primary text-center text-top" onclick="alertbox.render({
-							alertIcon: 'error',
-							title: 'Thank You!',
-							message: 'AlertBox Popup Message',
-							btnTitle: 'Ok',
-							border:true
-						})">Preview</button>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="try">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(3)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'error',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;border:true<br />
-						});
-					</code>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="img-icon">
-					<img src="images/e_02.png">
-				</div>
-			</div>
-		</div>
-		<div class="row border">
-			<div class="col-md-4">
-				<div class="btns">
-					<button class="btn btn-primary text-center text-top" onclick="alertbox.render({
-							alertIcon: 'warning',
-							title: 'Thank You!',
-							message: 'AlertBox Popup Message',
-							btnTitle: 'Ok',
-							border:true
-						})">Preview</button>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="try">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(4)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'warning',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;border:true<br />
-						});
-					</code>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="img-icon">
-					<img src="images/w_03.png">
-				</div>
-			</div>
-		</div>
-		<div class="row border">
-			<div class="col-md-4">
-				<div class="btns">
-					<button class="btn btn-primary text-center text-top" onclick="alertbox.render({
-							alertIcon: 'info',
-							title: 'Thank You!',
-							message: 'AlertBox Popup Message',
-							btnTitle: 'Ok',
-							border:true
-						})">Preview</button>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="try">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(5)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'info',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;border:true<br />
-						});
-					</code>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="img-icon">
-					<img src="images/i_04.png">
-				</div>
-			</div>
-		</div>
-		<div class="row border">
-			<div class="col-md-4">
-				<div class="btns">
-					<button class="btn btn-primary text-center text-top" onclick="alertbox.render({
-							alertIcon: 'question',
-							title: 'Thank You!',
-							message: 'AlertBox Popup Message',
-							btnTitle: 'Ok',
-							border:true
-						})">Preview</button>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="try">
-					<i class="fa fa-clone copyCode" onclick="copyClipboard(6)" aria-hidden="true"></i>
-					<code class="prettyprint lang-js">
-						alertbox.render({<br />
-						&nbsp;&nbsp;alertIcon: 'question',<br />
-						&nbsp;&nbsp;title: 'Thank You!',<br />
-						&nbsp;&nbsp;message: 'AlertBox Popup Message',<br />
-						&nbsp;&nbsp;btnTitle: 'Ok',<br />
-						&nbsp;&nbsp;border:true<br />
-						});
-					</code>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="img-icon">
-					<img src="images/q_05.png">
-				</div>
-			</div>
-		</div>
-		<div class="space"></div>
-		<div class="col-lg-12">
-			<h4 class="text-center text-color">How to install</h4>
-		</div>
-		<div class="install">
-			<br />
-			<li>This tag will be used in the footer.</li>
-			<div class="code">
-				<i class="fa fa-clone copyCode" onclick="copyClipboard(7)" aria-hidden="true"></i>
-				<code class="prettyprint lang-js">&lt;script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.2/alertbox.min.js"&gt;&lt;/script&gt;</code>
-			</div>
-			<br />
-			<li>For <b>AlertBox</b> function call</li>
-			<div class="code">
-				<i class="fa fa-clone copyCode" onclick="copyClipboard(8)" aria-hidden="true"></i>
-				<code class="prettyprint lang-js">
-					alertbox.render({<br />
-					&nbsp;alertIcon: 'question',<br />
-					&nbsp;title: 'Thank You!',<br />
-					&nbsp;message: 'AlertBox Popup Message',<br />
-					&nbsp;btnTitle: 'Ok',<br />
-					&nbsp;themeColor: '#000000',<br />
-					&nbsp;btnColor: '#7CFC00',<br />
-					&nbsp;border:true<br />
-					});<br />
-				</code>
-			</div>
-			<br />
-			<li>If you want a custom alert theme colour, then you add this code</li>
-			<div class="code">
-				<i class="fa fa-clone copyCode" onclick="copyClipboard(9)" aria-hidden="true"></i>
-				<code class="prettyprint lang-js">
-					alertbox.render({<br />
-					&nbsp;alertIcon: 'success',<br />
-					&nbsp;title: 'Thank You!',<br />
-					&nbsp;message: 'AlertBox Popup Message',<br />
-					&nbsp;btnTitle: 'Ok',<br />
-					&nbsp;themeColor: '#000000'<br />
-					});<br />
-				</code>
-			</div>
-			<br />
-			<li>If you want a custom button colour, then you add this code</li>
-			<div class="code">
-				<i class="fa fa-clone copyCode" onclick="copyClipboard(10)" aria-hidden="true"></i>
-				<code class="prettyprint lang-js">
-					alertbox.render({<br />
-					&nbsp;alertIcon: 'success',<br />
-					&nbsp;title: 'Thank You!',<br />
-					&nbsp;message: 'AlertBox Popup Message',<br />
-					&nbsp;btnTitle: 'Ok',<br />
-					&nbsp;themeColor: '#000000',<br />
-					&nbsp;btnColor: '#7CFC00'<br />
-					});<br />
-				</code>
-			</div>
-			<br />
-			<li>If you want border, then you add this code. Otherwise, the border will be false. </li>
-			<div class="code">
-				<i class="fa fa-clone copyCode" onclick="copyClipboard(11)" aria-hidden="true"></i>
-				<code class="prettyprint lang-js">
-					alertbox.render({<br />
-					&nbsp;alertIcon: 'success',<br />
-					&nbsp;title: 'Thank You!',<br />
-					&nbsp;message: 'AlertBox Popup Message',<br />
-					&nbsp;btnTitle: 'Ok',<br />
-					&nbsp;themeColor: '#000000',<br />
-					&nbsp;btnColor: '#7CFC00',<br />
-					&nbsp;border:true<br />
-					});<br />
-				</code>
-			</div>
-		</div>
-		<div class="space"></div>
-		<div class="col-lg-12">
-			<h4 class="text-center text-color">I need Help</h4>
-		</div>
-		<div class="text-area text-center">
-			<p>Has <img width="80px" src="images/black.png"> helped you create an amazing application?</p>
-			<p>You can show your support by making a donation:</p>
-			<a class="btn btn-primary" target="_new" style="background-color:#FFDD00; border-color:#FFDD00; color:000;"
-				href="https://www.buymeacoffee.com/antech"><svg width="20" height="20" viewBox="0 0 884 1279"
-					fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"
-						fill="#0D0C22"></path>
-					<path d="M803.896 388.891L802.916 389.166L803.896 388.891Z" fill="#0D0C22"></path>
-					<path
-						d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"
-						fill="#0D0C22"></path>
-					<path d="M791.113 297.529H791.244V297.447L791.113 297.529Z" fill="#0D0C22"></path>
-					<path
-						d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"
-						fill="#FFDD00"></path>
-					<path
-						d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"
-						fill="#0D0C22"></path>
-					<path
-						d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"
-						fill="#0D0C22"></path>
-				</svg> Buy Me A Book</a>
-		</div>
-		<div class="space"></div>
-		<div class="col-lg-12">
-			<h4 class="text-center text-color">Github</h4>
-		</div>
-		<div class="text-area text-center">
-			Hand-crafted with <span class="love-icon"></span> by <a class="btn btn-link"
-				href="https://github.com/noumanqamar450">Muhammad Nouman Qamar</a>
-		</div>
-		<div class="space"></div>
-	</div>
-	<div class="space"></div>
-	<div class="alertMsg">
-		<p>Clipboard Copied!</p>
-	</div>
-	<div class="alertErrorMsg">
-		<p>Oops, Unable to copy it!</p>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.2/alertbox.min.js"></script>
-	<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Syne"', "sans-serif"],
+              mono: ['"JetBrains Mono"', "monospace"],
+              body: ['"DM Sans"', "sans-serif"],
+            },
+            colors: {
+              brand: "#7C6FFF",
+              accent: "#FF6B6B",
+              lime: "#C6FF4E",
+              ink: "#0B0C0F",
+              panel: "#111318",
+              card: "#16181F",
+              border: "#252830",
+            },
+          },
+        },
+      };
+    </script>
 
-	<script src="./js/app.js"></script>
-	<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="antech" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-</body>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- AlertBox Library -->
+    <script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.2/alertbox.min.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-ink font-body text-white antialiased overflow-x-hidden">
+    <!-- Noise texture overlay -->
+    <div class="noise" aria-hidden="true"></div>
+
+    <!-- ══════════════════════════════
+       NAVIGATION
+  ══════════════════════════════ -->
+    <nav
+      id="navbar"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a href="#" class="flex items-center gap-2 group">
+          <span
+            class="w-7 h-7 rounded-md bg-brand flex items-center justify-center text-sm font-bold text-white group-hover:scale-110 transition-transform duration-200"
+            >⚡</span
+          >
+          <span class="font-display font-bold text-lg tracking-tight"
+            >Alert<span class="text-brand">Box</span></span
+          >
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm text-white/60">
+          <a href="#compare" class="hover:text-white transition-colors"
+            >Compare</a
+          >
+          <a href="#icons" class="hover:text-white transition-colors">Icons</a>
+          <a href="#install" class="hover:text-white transition-colors"
+            >Install</a
+          >
+          <a href="#support" class="hover:text-white transition-colors"
+            >Support</a
+          >
+          <a
+            href="https://github.com/noumanqamar450"
+            target="_blank"
+            class="flex items-center gap-2 px-4 py-1.5 rounded-full border border-border hover:border-brand hover:text-brand transition-all text-white/70"
+          >
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden text-white/60 hover:text-white p-2"
+          aria-label="Open menu"
+        >
+          <i class="fa fa-bars text-lg"></i>
+        </button>
+      </div>
+      <!-- Mobile drawer -->
+      <div
+        id="mobileDrawer"
+        class="hidden md:hidden bg-panel border-t border-border px-6 pb-6 pt-4 flex-col gap-4 text-sm text-white/60"
+      >
+        <a href="#compare" class="hover:text-white transition-colors py-1"
+          >Compare</a
+        >
+        <a href="#icons" class="hover:text-white transition-colors py-1"
+          >Icons</a
+        >
+        <a href="#install" class="hover:text-white transition-colors py-1"
+          >Install</a
+        >
+        <a href="#support" class="hover:text-white transition-colors py-1"
+          >Support</a
+        >
+      </div>
+    </nav>
+
+    <!-- ══════════════════════════════
+       HERO
+  ══════════════════════════════ -->
+    <header
+      class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-hidden"
+    >
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand/30 bg-brand/10 text-brand text-xs font-mono mb-8 tracking-widest uppercase"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-brand animate-ping"></span>
+          v1.0.2 — Now Available
+        </div>
+
+        <h1
+          class="font-display font-extrabold text-5xl md:text-7xl leading-tight tracking-tight mb-6"
+        >
+          Alerts that<br />
+          <span class="gradient-text">actually look good.</span>
+        </h1>
+
+        <p
+          class="text-white/50 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+        >
+          A simple, beautiful, responsive drop-in replacement for JavaScript's
+          boring
+          <code
+            class="font-mono text-white/80 bg-white/10 px-2 py-0.5 rounded text-base"
+            >alert()</code
+          >. One function call, zero dependencies.
+        </p>
+
+        <div class="flex flex-wrap gap-4 justify-center mb-16">
+          <button
+            class="btn-primary"
+            onclick="
+              alertbox.render({
+                alertIcon: 'success',
+                title: 'Hello from AlertBox!',
+                message: 'Beautiful alerts with zero effort.',
+                btnTitle: 'Nice!',
+                themeColor: '#7C6FFF',
+                btnColor: '#C6FF4E',
+                border: true,
+              })
+            "
+          >
+            <i class="fa fa-play mr-2 text-xs"></i>Live Preview
+          </button>
+          <a href="#install" class="btn-ghost">
+            <i class="fa fa-arrow-down mr-2 text-xs"></i>Get Started
+          </a>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/30 font-mono"
+        >
+          <span
+            ><span class="text-lime font-semibold text-base">50K+</span>
+            downloads</span
+          >
+          <span class="text-white/10">|</span>
+          <span
+            ><span class="text-lime font-semibold text-base">5</span> icon
+            types</span
+          >
+          <span class="text-white/10">|</span>
+          <span
+            ><span class="text-lime font-semibold text-base">0</span>
+            dependencies</span
+          >
+          <span class="text-white/10">|</span>
+          <span
+            ><span class="text-lime font-semibold text-base">100%</span>
+            customizable</span
+          >
+        </div>
+      </div>
+
+      <div class="absolute bottom-10 inset-x-0 flex justify-center">
+        <div class="scroll-cue">
+          <i class="fa fa-chevron-down text-xs text-white/30"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════
+       COMPARE
+  ══════════════════════════════ -->
+    <section id="compare" class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-label">Why upgrade?</p>
+        <h2 class="section-title">
+          AlertBox makes popup messages <em>easy and pretty.</em>
+        </h2>
+
+        <div class="mt-14 grid md:grid-cols-[1fr_auto_1fr] gap-6 items-start">
+          <!-- Normal Alert -->
+          <div class="code-card reveal-left">
+            <div class="code-card__header">
+              <span class="dot bg-red-500/80"></span>
+              <span class="dot bg-yellow-400/80"></span>
+              <span class="dot bg-green-500/80"></span>
+              <span class="ml-auto font-mono text-xs text-white/25"
+                >normal alert</span
+              >
+            </div>
+            <div class="code-card__body">
+              <pre id="code0" class="code-pre">alert('Hello World!');</pre>
+              <button class="copy-btn" data-code="code0" title="Copy code">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+            <div class="code-card__footer">
+              <button
+                class="btn-ghost w-full justify-center text-sm"
+                onclick="alert('Hello World!')"
+              >
+                <i class="fa fa-eye mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <span class="badge badge-bad">❌ Boring</span>
+          </div>
+
+          <!-- VS divider -->
+          <div class="vs-divider"><span>VS</span></div>
+
+          <!-- AlertBox -->
+          <div class="code-card code-card--glow reveal-right">
+            <div class="code-card__header">
+              <span class="dot bg-red-500/80"></span>
+              <span class="dot bg-yellow-400/80"></span>
+              <span class="dot bg-green-500/80"></span>
+              <span class="ml-auto font-mono text-xs text-brand">alertbox</span>
+            </div>
+            <div class="code-card__body">
+              <pre id="code1" class="code-pre">alertbox.render({
+  alertIcon: <span class="c-str">'success'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  themeColor: <span class="c-str">'#7C6FFF'</span>,
+  btnColor: <span class="c-str">'#C6FF4E'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+              <button class="copy-btn" data-code="code1" title="Copy code">
+                <i class="fa fa-copy"></i>
+              </button>
+            </div>
+            <div class="code-card__footer">
+              <button
+                class="btn-primary w-full justify-center text-sm"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'success',
+                    title: 'Thank You!',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    themeColor: '#7C6FFF',
+                    btnColor: '#C6FF4E',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-eye mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <span class="badge badge-good">✨ Beautiful</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+       DEMO SCREENSHOTS CAROUSEL
+  ══════════════════════════════ -->
+    <section class="py-16 px-6 bg-panel border-y border-border">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-label">Screenshots</p>
+        <h2 class="section-title mb-10">See it in action.</h2>
+
+        <div class="carousel-wrap splide">
+          <div class="carousel-track splide__track" id="carouselTrack">
+			<ul class="splide__list">
+				<li class="splide__slide carousel-slide">
+				  <img
+					src="images/01.png"
+					alt="AlertBox demo 1"
+					class="carousel-img"
+				  />
+				</li>
+				<li class="splide__slide carousel-slide">
+				  <img
+					src="images/02.png"
+					alt="AlertBox demo 2"
+					class="carousel-img"
+				  />
+				</li>
+				<li class="splide__slide carousel-slide">
+				  <img
+					src="images/03.png"
+					alt="AlertBox demo 3"
+					class="carousel-img"
+				  />
+				</li>
+				<li class="splide__slide carousel-slide">
+				  <img
+					src="images/04.png"
+					alt="AlertBox demo 4"
+					class="carousel-img"
+				  />
+				</li>
+				<li class="splide__slide carousel-slide">
+				  <img
+					src="images/05.png"
+					alt="AlertBox demo 5"
+					class="carousel-img"
+				  />
+				</li>
+			</ul>
+          </div>
+		  <div class="splide__arrows">
+				<button
+					class="carousel-btn carousel-btn--prev splide__arrow splide__arrow--prev"
+					id="prevSlide"
+					aria-label="Previous slide"
+				>
+					<i class="fa fa-chevron-left"></i>
+				</button>
+				<button
+					class="carousel-btn carousel-btn--next splide__arrow splide__arrow--next"
+					id="nextSlide"
+					aria-label="Next slide"
+				>
+					<i class="fa fa-chevron-right"></i>
+				</button>
+		  </div>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+       ICONS SECTION
+  ══════════════════════════════ -->
+    <section id="icons" class="py-24 px-6">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-label">Alert Types</p>
+        <h2 class="section-title">Use Icons.</h2>
+        <p class="section-sub">
+          Five built-in icon types to match every situation.
+        </p>
+
+        <div
+          class="mt-12 rounded-2xl border border-border overflow-hidden divide-y divide-border"
+        >
+          <!-- SUCCESS -->
+          <div class="icon-row reveal">
+            <div class="icon-row__preview">
+              <button
+                class="btn-success"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'success',
+                    title: 'Thank You!',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-play mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <div class="icon-row__code">
+              <div class="code-card__body">
+                <pre id="code2" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'success'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code2" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="icon-row__badge">
+              <span class="icon-pill icon-pill--success"
+                ><i class="fa fa-circle-check mr-1.5"></i>success</span
+              >
+              <img
+                src="images/s_01.png"
+                alt="Success alert preview"
+                class="icon-thumb"
+              />
+            </div>
+          </div>
+
+          <!-- ERROR -->
+          <div class="icon-row reveal">
+            <div class="icon-row__preview">
+              <button
+                class="btn-danger"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'error',
+                    title: 'Oops!',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-play mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <div class="icon-row__code">
+              <div class="code-card__body">
+                <pre id="code3" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'error'</span>,
+  title: <span class="c-str">'Oops!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code3" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="icon-row__badge">
+              <span class="icon-pill icon-pill--error"
+                ><i class="fa fa-circle-xmark mr-1.5"></i>error</span
+              >
+              <img
+                src="images/e_02.png"
+                alt="Error alert preview"
+                class="icon-thumb"
+              />
+            </div>
+          </div>
+
+          <!-- WARNING -->
+          <div class="icon-row reveal">
+            <div class="icon-row__preview">
+              <button
+                class="btn-warning"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'warning',
+                    title: 'Careful!',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-play mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <div class="icon-row__code">
+              <div class="code-card__body">
+                <pre id="code4" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'warning'</span>,
+  title: <span class="c-str">'Careful!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code4" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="icon-row__badge">
+              <span class="icon-pill icon-pill--warning"
+                ><i class="fa fa-triangle-exclamation mr-1.5"></i>warning</span
+              >
+              <img
+                src="images/w_03.png"
+                alt="Warning alert preview"
+                class="icon-thumb"
+              />
+            </div>
+          </div>
+
+          <!-- INFO -->
+          <div class="icon-row reveal">
+            <div class="icon-row__preview">
+              <button
+                class="btn-info"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'info',
+                    title: 'Info',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-play mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <div class="icon-row__code">
+              <div class="code-card__body">
+                <pre id="code5" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'info'</span>,
+  title: <span class="c-str">'Info'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code5" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="icon-row__badge">
+              <span class="icon-pill icon-pill--info"
+                ><i class="fa fa-circle-info mr-1.5"></i>info</span
+              >
+              <img
+                src="images/i_04.png"
+                alt="Info alert preview"
+                class="icon-thumb"
+              />
+            </div>
+          </div>
+
+          <!-- QUESTION -->
+          <div class="icon-row reveal">
+            <div class="icon-row__preview">
+              <button
+                class="btn-ghost"
+                onclick="
+                  alertbox.render({
+                    alertIcon: 'question',
+                    title: 'Are you sure?',
+                    message: 'AlertBox Popup Message',
+                    btnTitle: 'Ok',
+                    border: true,
+                  })
+                "
+              >
+                <i class="fa fa-play mr-2 text-xs"></i>Preview
+              </button>
+            </div>
+            <div class="icon-row__code">
+              <div class="code-card__body">
+                <pre id="code6" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'question'</span>,
+  title: <span class="c-str">'Are you sure?'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code6" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+            <div class="icon-row__badge">
+              <span class="icon-pill icon-pill--question"
+                ><i class="fa fa-circle-question mr-1.5"></i>question</span
+              >
+              <img
+                src="images/q_05.png"
+                alt="Question alert preview"
+                class="icon-thumb"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+       HOW TO INSTALL
+  ══════════════════════════════ -->
+    <section id="install" class="py-24 px-6 bg-panel border-y border-border">
+      <div class="max-w-5xl mx-auto">
+        <p class="section-label">Documentation</p>
+        <h2 class="section-title">How to install.</h2>
+        <p class="section-sub">Three steps — done in under a minute.</p>
+
+        <div class="mt-12 flex flex-col gap-10">
+          <!-- Step 1 -->
+          <div class="install-step reveal">
+            <div class="install-step__num">01</div>
+            <div class="install-step__body">
+              <p class="install-step__desc">
+                Add this <code class="inline-code">&lt;script&gt;</code> tag to
+                your HTML footer
+              </p>
+              <div class="code-card__body mt-3">
+                <pre id="code7" class="code-pre text-sm">
+&lt;script src="https://cdn.jsdelivr.net/gh/noumanqamar450/alertbox@main/version/1.0.2/alertbox.min.js"&gt;&lt;/script&gt;</pre
+                >
+                <button class="copy-btn" data-code="code7" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="install-step reveal">
+            <div class="install-step__num">02</div>
+            <div class="install-step__body">
+              <p class="install-step__desc">
+                Basic
+                <strong class="text-white font-semibold">AlertBox</strong>
+                function call
+              </p>
+              <div class="code-card__body mt-3">
+                <pre id="code8" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'question'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  themeColor: <span class="c-str">'#000000'</span>,
+  btnColor: <span class="c-str">'#7CFC00'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code8" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 — Options -->
+          <div class="install-step reveal">
+            <div class="install-step__num">03</div>
+            <div class="install-step__body">
+              <p class="install-step__desc">
+                Custom
+                <strong class="text-white font-semibold">theme colour</strong>
+              </p>
+              <div class="code-card__body mt-3">
+                <pre id="code9" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'success'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  themeColor: <span class="c-str">'#000000'</span>
+});</pre>
+                <button class="copy-btn" data-code="code9" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+
+              <p class="install-step__desc mt-8">
+                Custom
+                <strong class="text-white font-semibold">button colour</strong>
+              </p>
+              <div class="code-card__body mt-3">
+                <pre id="code10" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'success'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  themeColor: <span class="c-str">'#000000'</span>,
+  btnColor: <span class="c-str">'#7CFC00'</span>
+});</pre>
+                <button class="copy-btn" data-code="code10" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+
+              <p class="install-step__desc mt-8">
+                Enable
+                <strong class="text-white font-semibold">border</strong>
+                (default is false)
+              </p>
+              <div class="code-card__body mt-3">
+                <pre id="code11" class="code-pre text-sm">alertbox.render({
+  alertIcon: <span class="c-str">'success'</span>,
+  title: <span class="c-str">'Thank You!'</span>,
+  message: <span class="c-str">'AlertBox Popup Message'</span>,
+  btnTitle: <span class="c-str">'Ok'</span>,
+  themeColor: <span class="c-str">'#000000'</span>,
+  btnColor: <span class="c-str">'#7CFC00'</span>,
+  border: <span class="c-kw">true</span>
+});</pre>
+                <button class="copy-btn" data-code="code11" title="Copy">
+                  <i class="fa fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+       SUPPORT
+  ══════════════════════════════ -->
+    <section id="support" class="py-28 px-6">
+      <div class="max-w-xl mx-auto text-center reveal">
+        <p class="section-label">Open Source</p>
+        <h2 class="section-title mb-4">I need Help ☕</h2>
+        <p class="text-white/45 text-lg leading-relaxed mb-8">
+          Has <strong class="text-white">AlertBox</strong> helped you build
+          something amazing? Show your support with a small donation — it keeps
+          this project alive and growing.
+        </p>
+        <a
+          href="https://www.buymeacoffee.com/antech"
+          target="_blank"
+          class="bmc-btn"
+        >
+          <!-- Coffee SVG simplified -->
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 884 1279"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M791.109 297.518L790.231 297.002L788.201 296.383C789.018 297.072 790.04 297.472 791.109 297.518Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M803.896 388.891L802.916 389.166L803.896 388.891Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M791.484 297.377C791.359 297.361 791.237 297.332 791.118 297.29C791.111 297.371 791.111 297.453 791.118 297.534C791.252 297.516 791.379 297.462 791.484 297.377Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M791.113 297.529H791.244V297.447L791.113 297.529Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M803.111 388.726L804.591 387.883L805.142 387.573L805.641 387.04C804.702 387.444 803.846 388.016 803.111 388.726Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M793.669 299.515L792.223 298.138L791.243 297.605C791.77 298.535 792.641 299.221 793.669 299.515Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M430.019 1186.18C428.864 1186.68 427.852 1187.46 427.076 1188.45L427.988 1187.87C428.608 1187.3 429.485 1186.63 430.019 1186.18Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M641.187 1144.63C641.187 1143.33 640.551 1143.57 640.705 1148.21C640.705 1147.84 640.86 1147.46 640.929 1147.1C641.015 1146.27 641.084 1145.46 641.187 1144.63Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M619.284 1186.18C618.129 1186.68 617.118 1187.46 616.342 1188.45L617.254 1187.87C617.873 1187.3 618.751 1186.63 619.284 1186.18Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M281.304 1196.06C280.427 1195.3 279.354 1194.8 278.207 1194.61C279.136 1195.06 280.065 1195.51 280.684 1195.85L281.304 1196.06Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M247.841 1164.01C247.704 1162.66 247.288 1161.35 246.619 1160.16C247.093 1161.39 247.489 1162.66 247.806 1163.94L247.841 1164.01Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M472.623 590.836C426.682 610.503 374.546 632.802 306.976 632.802C278.71 632.746 250.58 628.868 223.353 621.274L270.086 1101.08C271.74 1121.13 280.876 1139.83 295.679 1153.46C310.482 1167.09 329.87 1174.65 349.992 1174.65C349.992 1174.65 416.254 1178.09 438.365 1178.09C462.161 1178.09 533.516 1174.65 533.516 1174.65C553.636 1174.65 573.019 1167.08 587.819 1153.45C602.619 1139.82 611.752 1121.13 613.406 1101.08L663.459 570.876C641.091 563.237 618.516 558.161 593.068 558.161C549.054 558.144 513.591 573.303 472.623 590.836Z"
+              fill="#FFDD00"
+            ></path>
+            <path
+              d="M78.6885 386.132L79.4799 386.872L79.9962 387.182C79.5987 386.787 79.1603 386.435 78.6885 386.132Z"
+              fill="#0D0C22"
+            ></path>
+            <path
+              d="M879.567 341.849L872.53 306.352C866.215 274.503 851.882 244.409 819.19 232.898C808.711 229.215 796.821 227.633 788.786 220.01C780.751 212.388 778.376 200.55 776.518 189.572C773.076 169.423 769.842 149.257 766.314 129.143C763.269 111.85 760.86 92.4243 752.928 76.56C742.604 55.2584 721.182 42.8009 699.88 34.559C688.965 30.4844 677.826 27.0375 666.517 24.2352C613.297 10.1947 557.342 5.03277 502.591 2.09047C436.875 -1.53577 370.983 -0.443234 305.422 5.35968C256.625 9.79894 205.229 15.1674 158.858 32.0469C141.91 38.224 124.445 45.6399 111.558 58.7341C95.7448 74.8221 90.5829 99.7026 102.128 119.765C110.336 134.012 124.239 144.078 138.985 150.737C158.192 159.317 178.251 165.846 198.829 170.215C256.126 182.879 315.471 187.851 374.007 189.968C438.887 192.586 503.87 190.464 568.44 183.618C584.408 181.863 600.347 179.758 616.257 177.304C634.995 174.43 647.022 149.928 641.499 132.859C634.891 112.453 617.134 104.538 597.055 107.618C594.095 108.082 591.153 108.512 588.193 108.942L586.06 109.252C579.257 110.113 572.455 110.915 565.653 111.661C551.601 113.175 537.515 114.414 523.394 115.378C491.768 117.58 460.057 118.595 428.363 118.647C397.219 118.647 366.058 117.769 334.983 115.722C320.805 114.793 306.661 113.611 292.552 112.177C286.134 111.506 279.733 110.801 273.333 110.009L267.241 109.235L265.917 109.046L259.602 108.134C246.697 106.189 233.792 103.953 221.025 101.251C219.737 100.965 218.584 100.249 217.758 99.2193C216.932 98.1901 216.482 96.9099 216.482 95.5903C216.482 94.2706 216.932 92.9904 217.758 91.9612C218.584 90.9319 219.737 90.2152 221.025 89.9293H221.266C232.33 87.5721 243.479 85.5589 254.663 83.8038C258.392 83.2188 262.131 82.6453 265.882 82.0832H265.985C272.988 81.6186 280.026 80.3625 286.994 79.5366C347.624 73.2301 408.614 71.0801 469.538 73.1014C499.115 73.9618 528.676 75.6996 558.116 78.6935C564.448 79.3474 570.746 80.0357 577.043 80.8099C579.452 81.1025 581.878 81.4465 584.305 81.7391L589.191 82.4445C603.438 84.5667 617.61 87.1419 631.708 90.1703C652.597 94.7128 679.422 96.1925 688.713 119.077C691.673 126.338 693.015 134.408 694.649 142.03L696.732 151.752C696.786 151.926 696.826 152.105 696.852 152.285C701.773 175.227 706.7 198.169 711.632 221.111C711.994 222.806 712.002 224.557 711.657 226.255C711.312 227.954 710.621 229.562 709.626 230.982C708.632 232.401 707.355 233.6 705.877 234.504C704.398 235.408 702.75 235.997 701.033 236.236H700.895L697.884 236.649L694.908 237.044C685.478 238.272 676.038 239.419 666.586 240.486C647.968 242.608 629.322 244.443 610.648 245.992C573.539 249.077 536.356 251.102 499.098 252.066C480.114 252.57 461.135 252.806 442.162 252.771C366.643 252.712 291.189 248.322 216.173 239.625C208.051 238.662 199.93 237.629 191.808 236.58C198.106 237.389 187.231 235.96 185.029 235.651C179.867 234.928 174.705 234.177 169.543 233.397C152.216 230.798 134.993 227.598 117.7 224.793C96.7944 221.352 76.8005 223.073 57.8906 233.397C42.3685 241.891 29.8055 254.916 21.8776 270.735C13.7217 287.597 11.2956 305.956 7.64786 324.075C4.00009 342.193 -1.67805 361.688 0.472751 380.288C5.10128 420.431 33.165 453.054 73.5313 460.35C111.506 467.232 149.687 472.807 187.971 477.556C338.361 495.975 490.294 498.178 641.155 484.129C653.44 482.982 665.708 481.732 677.959 480.378C681.786 479.958 685.658 480.398 689.292 481.668C692.926 482.938 696.23 485.005 698.962 487.717C701.694 490.429 703.784 493.718 705.08 497.342C706.377 500.967 706.846 504.836 706.453 508.665L702.633 545.797C694.936 620.828 687.239 695.854 679.542 770.874C671.513 849.657 663.431 928.434 655.298 1007.2C653.004 1029.39 650.71 1051.57 648.416 1073.74C646.213 1095.58 645.904 1118.1 641.757 1139.68C635.218 1173.61 612.248 1194.45 578.73 1202.07C548.022 1209.06 516.652 1212.73 485.161 1213.01C450.249 1213.2 415.355 1211.65 380.443 1211.84C343.173 1212.05 297.525 1208.61 268.756 1180.87C243.479 1156.51 239.986 1118.36 236.545 1085.37C231.957 1041.7 227.409 998.039 222.9 954.381L197.607 711.615L181.244 554.538C180.968 551.94 180.693 549.376 180.435 546.76C178.473 528.023 165.207 509.681 144.301 510.627C126.407 511.418 106.069 526.629 108.168 546.76L120.298 663.214L145.385 904.104C152.532 972.528 159.661 1040.96 166.773 1109.41C168.15 1122.52 169.44 1135.67 170.885 1148.78C178.749 1220.43 233.465 1259.04 301.224 1269.91C340.799 1276.28 381.337 1277.59 421.497 1278.24C472.979 1279.07 524.977 1281.05 575.615 1271.72C650.653 1257.95 706.952 1207.85 714.987 1130.13C717.282 1107.69 719.576 1085.25 721.87 1062.8C729.498 988.559 737.115 914.313 744.72 840.061L769.601 597.451L781.009 486.263C781.577 480.749 783.905 475.565 787.649 471.478C791.392 467.391 796.352 464.617 801.794 463.567C823.25 459.386 843.761 452.245 859.023 435.916C883.318 409.918 888.153 376.021 879.567 341.849ZM72.4301 365.835C72.757 365.68 72.1548 368.484 71.8967 369.792C71.8451 367.813 71.9483 366.058 72.4301 365.835ZM74.5121 381.94C74.6842 381.819 75.2003 382.508 75.7337 383.334C74.925 382.576 74.4089 382.009 74.4949 381.94H74.5121ZM76.5597 384.641C77.2996 385.897 77.6953 386.689 76.5597 384.641V384.641ZM80.672 387.979H80.7752C80.7752 388.1 80.9645 388.22 81.0333 388.341C80.9192 388.208 80.7925 388.087 80.6548 387.979H80.672ZM800.796 382.989C793.088 390.319 781.473 393.726 769.996 395.43C641.292 414.529 510.713 424.199 380.597 419.932C287.476 416.749 195.336 406.407 103.144 393.382C94.1102 392.109 84.3197 390.457 78.1082 383.798C66.4078 371.237 72.1548 345.944 75.2003 330.768C77.9878 316.865 83.3218 298.334 99.8572 296.355C125.667 293.327 155.64 304.218 181.175 308.09C211.917 312.781 242.774 316.538 273.745 319.36C405.925 331.405 540.325 329.529 671.92 311.91C695.906 308.686 719.805 304.941 743.619 300.674C764.835 296.871 788.356 289.731 801.175 311.703C809.967 326.673 811.137 346.701 809.778 363.615C809.359 370.984 806.139 377.915 800.779 382.989H800.796Z"
+              fill="#0D0C22"
+            ></path>
+          </svg>
+          Buy Me A Book
+        </a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+    <footer class="border-t border-border bg-panel py-10 px-6">
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/35"
+      >
+        <div class="flex items-center gap-2">
+          <span
+            class="w-6 h-6 rounded bg-brand flex items-center justify-center text-xs font-bold text-white"
+            >⚡</span
+          >
+          <span class="font-display text-white/60 font-semibold">AlertBox</span>
+        </div>
+        <p class="text-center">
+          Hand-crafted with <span class="text-accent">❤</span> by
+          <a
+            href="https://github.com/noumanqamar450"
+            target="_blank"
+            class="text-brand hover:underline ml-1"
+            >Muhammad Nouman Qamar</a
+          >
+        </p>
+        <a
+          href="https://github.com/noumanqamar450"
+          target="_blank"
+          class="flex items-center gap-2 hover:text-white transition-colors"
+        >
+          <i class="fa-brands fa-github text-base"></i> View on GitHub
+        </a>
+      </div>
+    </footer>
+
+    <!-- Toast notifications -->
+    <div
+      id="toastSuccess"
+      class="toast toast-success"
+      role="status"
+      aria-live="polite"
+    >
+      <i class="fa fa-circle-check text-lime mr-2"></i> Clipboard Copied!
+    </div>
+    <div
+      id="toastError"
+      class="toast toast-error"
+      role="alert"
+      aria-live="assertive"
+    >
+      <i class="fa fa-circle-xmark text-accent mr-2"></i> Oops, unable to copy!
+    </div>
+
+    <!-- App JS (no jQuery needed) -->
+    <script src="js/app.js"></script>
+  </body>
 </html>
