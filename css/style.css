@@ -484,7 +484,7 @@ body {
 .carousel-slide {
   flex: 0 0 33%;
   padding: 1.5rem;
-  padding: 0px;
+  padding-bottom: 0px;
 }
 
 button.splide__pagination__page.is-active {
