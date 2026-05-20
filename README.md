@@ -1,5 +1,5 @@
 
-# ![AlertBox](https://github.com/simple-alertbox/alertbox/blob/main/alert.png)
+# AlertBox
 A simple, beautiful, responsive, easy to use, customizable text for JavaScript's [Alert Box](https://alertbox.js.org).
 * How to install
 
